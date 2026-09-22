@@ -7,7 +7,7 @@ function PhotoCard({id,title,desc,category,image,alt}){
                     <h5 className="card-title">{title}</h5>
                     <h6 class="card-subtitle mb-2 text-body-secondary">{category}</h6>
                     <p className="card-text">{desc}</p>
-                    <button className="btn btn-dark">Guzior</button>
+                    <button className="btn btn-dark" data-bs-toggle="modal" data-bs-target={id}>Powiększ</button>
                 </div>
             </div>
         </>
