@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import CategoryBar from "../components/CategoryBar"
 import Gallery from "../components/Gallery"
 import Footer from "../components/Footer"
+import AddPhotoModal from "../components/AddPhotoModal"
 
 function App()
 {
@@ -18,6 +19,7 @@ function App()
       </main>
 
       <Footer />
+      <AddPhotoModal />
     </>
   )
 }
