@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar"
 import Header from "../components/Header"
 import CategoryBar from "../components/CategoryBar"
 import Gallery from "../components/Gallery"
+import Footer from "../components/Footer"
 
 function App()
 {
@@ -15,6 +16,8 @@ function App()
         <CategoryBar />
         <Gallery />
       </main>
+
+      <Footer />
     </>
   )
 }
