@@ -1,13 +1,14 @@
 import PhotoCard from "../components/PhotoCard"
 import Navbar from "../components/Navbar"
+import Header from "../components/Header"
 
 function App()
 {
   return(
     <>
     <Navbar />
+      <Header />
       <div className="container mt-4">
-        <h1>Galeria zdjęć</h1>
         <PhotoCard />
       </div>
     </>
