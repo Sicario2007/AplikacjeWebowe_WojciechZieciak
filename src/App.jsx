@@ -1,6 +1,7 @@
 import PhotoCard from "../components/PhotoCard"
 import Navbar from "../components/Navbar"
 import Header from "../components/Header"
+import CategoryBar from "../components/CategoryBar"
 
 function App()
 {
@@ -8,9 +9,13 @@ function App()
     <>
     <Navbar />
       <Header />
-      <div className="container mt-4">
+      {/* <div className="container mt-4">
         <PhotoCard />
-      </div>
+      </div> */}
+
+      <main className="container">
+        <CategoryBar />
+      </main>
     </>
   )
 }
