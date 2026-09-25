@@ -1,16 +1,18 @@
-function PhotoCard({id,title,desc,category,image,alt}){
-    return(
-        <>
-            <div className="card h-100 w-50">
-                <img src={image} alt={alt} className="card-img-top" />
-                <div className="card-body">
-                    <h5 className="card-title">{title}</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">{category}</h6>
-                    <p className="card-text">{desc}</p>
-                    <button className="btn btn-dark" data-bs-toggle="modal" data-bs-target={id}>Powiększ</button>
-                </div>
+const NAZWA_KATEGORII = { gory: 'Góry', morze: 'Morze', miasto:'Miasto' }
+const KOLOR_KATEGORII = { gory: 'success', morze: 'primary', miasto:'dark' }
+
+function PhotoCard({ title, description, category, image, alt }) {
+    return (
+        <div className="card h-100 shadow-sm">
+            <img src={image} className="card-img-top" alt={alt} />
+            <div className="card-body d-flex flex-column">
+                <h3 className="card-title h5">{title}</h3>
+                <p>
+                    <span className={`badge text-bg-${KOLOR_KATEGORII[category]}`}>{NAZWA_KATEGORII[category]}</span>
+                </p>
+                <p className="card-text text-body-secondary">{description}</p>
             </div>
-        </>
+        </div>
     )
 }
 
