@@ -23,3 +23,11 @@ const POLA = [
         sprawdz: wartosc => wartosc.length < 10 ? "Wiadomość musi mieć co najmniej 10 znaków." : "",
     },
 ];
+
+function pokazBlad(id, komunikat) {
+    const pole = document.querySelector(`#${id}`);
+    const miejsceNaBlad = document.querySelector(`#blad-${id}`);
+
+    miejsceNaBlad.textContent = komunikat;
+    pole.closest(".pole").classList.toggle("pole--blad", komunikat !== "");
+}
