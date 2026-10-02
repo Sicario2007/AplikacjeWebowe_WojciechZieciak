@@ -70,3 +70,43 @@ h2 {
     margin: 0;
     padding-left: 1.2rem;
 }
+
+.pole {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    font: inherit;
+    border: 1px solid #C7C7D1;
+    border-radius: 6px;
+    background: #FFFFFF;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--kolor-glowny);
+    outline-offset: 1px;
+    border-color: var(--kolor-glowny);
+}
+
+textarea {
+resize: vertical;
+}
+
+.pole--blad input, .pole--blad select, .pole--blad textarea {
+    border-color: var(--kolor-blad);
+}
+
+.blad {
+    margin: 0.3rem 0 0;
+    min-height: 1.2rem;
+    font-size: 0.875rem;
+    color: var(--kolor-blad);
+}
