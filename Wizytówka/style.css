@@ -1,7 +1,7 @@
 :root {
-    --kolor-glowny: #5B3FD6; /* rgb(91, 63, 214) */
-    --kolor-ciemny: #40299B; /* rgb(64, 41, 155) */
-    --kolor-blad: #C0392B; /* rgb(192, 57, 43) */
+    --kolor-glowny: #5B3FD6;
+    --kolor-ciemny: #40299B;
+    --kolor-blad: #C0392B;
     --kolor-tlo: #F4F4F7;
     --kolor-tekst: #1E1E24;
 }
@@ -22,4 +22,31 @@ main, .stopka {
     max-width: 720px;
     margin: 0 auto;
     padding: 0 1.5rem;
+}
+
+.naglowek {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.awatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.naglowek h1 {
+    margin: 0;
+    font-size: 1.9rem;
+    color: var(--kolor-glowny);
+}
+
+.podtytul {
+    margin: 0.25rem 0 0;
+    color: #5A5A66;
 }
