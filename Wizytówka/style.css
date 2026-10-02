@@ -1,0 +1,25 @@
+:root {
+    --kolor-glowny: #5B3FD6; /* rgb(91, 63, 214) */
+    --kolor-ciemny: #40299B; /* rgb(64, 41, 155) */
+    --kolor-blad: #C0392B; /* rgb(192, 57, 43) */
+    --kolor-tlo: #F4F4F7;
+    --kolor-tekst: #1E1E24;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--kolor-tekst);
+    background: var(--kolor-tlo);
+}
+
+main, .stopka {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
