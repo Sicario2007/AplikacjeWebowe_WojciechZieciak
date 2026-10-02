@@ -44,3 +44,12 @@ function kartaHtml(uzytkownik) {
             </dl>
         </li>`;
 }
+
+function pokazListe(lista) {
+    if (lista.length === 0) {
+        wynik.innerHTML = `<p class="stan">Brak wyników</p>`;
+        return;
+    }
+
+    wynik.innerHTML = `<ul class="lista">${lista.map(kartaHtml).join("")}</ul>`;
+}
