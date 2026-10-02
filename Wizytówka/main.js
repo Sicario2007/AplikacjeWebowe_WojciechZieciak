@@ -31,3 +31,18 @@ function pokazBlad(id, komunikat) {
     miejsceNaBlad.textContent = komunikat;
     pole.closest(".pole").classList.toggle("pole--blad", komunikat !== "");
 }
+
+function sprawdzPole(opis) {
+    const wartosc = document.querySelector(`#${opis.id}`).value.trim();
+    let komunikat = "";
+
+    if (wartosc === "") {
+        komunikat = opis.pusteKomunikat;
+    } 
+    else if (opis.sprawdz) {
+        komunikat = opis.sprawdz(wartosc);
+    }
+    pokazBlad(opis.id, komunikat);
+
+    return komunikat === "";
+}
