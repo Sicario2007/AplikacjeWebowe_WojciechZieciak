@@ -110,3 +110,48 @@ resize: vertical;
     font-size: 0.875rem;
     color: var(--kolor-blad);
 }
+
+.przycisk {
+    padding: 0.6rem 1.4rem;
+    font: inherit;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: var(--kolor-glowny);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.przycisk:hover {
+    background: var(--kolor-ciemny);
+}
+
+.podziekowanie {
+    padding: 1rem 1.25rem;
+    background: #EFEBFC;
+    border-left: 4px solid var(--kolor-glowny);
+    border-radius: 6px;
+}
+
+.podziekowanie h3 {
+    margin-top: 0;
+    color: var(--kolor-glowny);
+}
+
+.stopka {
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #5A5A66;
+}
+
+a {
+    color: var(--kolor-glowny);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--kolor-ciemny);
+}
