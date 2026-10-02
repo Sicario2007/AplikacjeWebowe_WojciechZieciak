@@ -46,3 +46,12 @@ function sprawdzPole(opis) {
 
     return komunikat === "";
 }
+
+POLA.forEach(opis => {
+    const pole = document.querySelector(`#${opis.id}`);
+    pole.addEventListener("input", () => {
+        if (pole.closest(".pole").classList.contains("pole--blad")) {
+            sprawdzPole(opis);
+        }
+    });
+});
