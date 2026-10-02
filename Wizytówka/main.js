@@ -55,3 +55,25 @@ POLA.forEach(opis => {
         }
     });
 });
+
+formularz.addEventListener("submit", event => {
+    event.preventDefault();
+    const wyniki = POLA.map(sprawdzPole);
+    const wszystkoPoprawne = wyniki.every(ok => ok);
+
+    if (!wszystkoPoprawne) {
+        const pierwszyBlad = POLA[wyniki.indexOf(false)];
+        document.querySelector(`#${pierwszyBlad.id}`).focus();
+
+        return;
+    }
+
+    const imie = document.querySelector("#imie").value.trim();
+    const temat = document.querySelector("#temat");
+    const wybranyTemat = temat.options[temat.selectedIndex].textContent;
+    
+    podziekowanieTresc.textContent =`${imie}, Twoja wiadomość w sprawie „${wybranyTemat}" została wysłana. ` + `Odpowiem najszybciej, jak to możliwe.`;
+    
+    formularz.hidden = true;
+    podziekowanie.hidden = false;
+});
