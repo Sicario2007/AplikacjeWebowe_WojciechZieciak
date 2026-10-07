@@ -1,3 +1,4 @@
+import './App.css'
 import PhotoCard from "../components/PhotoCard"
 import Navbar from "../components/Navbar"
 import Header from "../components/Header"
