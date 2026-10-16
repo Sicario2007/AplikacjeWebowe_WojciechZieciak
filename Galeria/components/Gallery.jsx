@@ -20,4 +20,4 @@ function Gallery({ zdjecia, onUsun}) {
   )
 }
 
-export default Gallery
+export default Gallery;
