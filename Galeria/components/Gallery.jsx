@@ -1,14 +1,18 @@
-import photos from '../data/photos.json'
+import { Fragment } from 'react'
 import PhotoCard from './PhotoCard'
+import PhotoModal from './AddPhotoModal'
 
 function Gallery(){
     return(
         <>
             <div id="galeria" className="row g-4">
-                {photos.map(photo => (
-                    <div key={photo.id} className="col-12 col-md-6 col-lg-4">
-                        <PhotoCard {...photo} />
-                    </div>
+                {zdjecia.map(zdjecie => (
+                    <Fragment key={zdjecie.id}>
+                        <div className="col-12 col-md-6 col-lg-4">
+                            <PhotoCard {...zdjecie} />
+                        </div>
+                        <PhotoModal {...zdjecie} />
+                    </Fragment>
                 ))}
             </div>
         </>
