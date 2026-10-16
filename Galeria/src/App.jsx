@@ -10,6 +10,7 @@ import FiltersOffcanvas from "../components/FiltersOffCanvas"
 import photos from "../data/photos.json"
 import CategoryBar from './components/CategoryBar.jsx'
 import Gallery from './components/Gallery.jsx'
+import FiltersOffcanvas from './components/FiltersOffcanvas.jsx'
 
 function App()
 {
@@ -43,7 +44,7 @@ function App()
 
       <Footer />
       <AddPhotoModal />
-      <FiltersOffcanvas />
+      <FiltersOffcanvas aktywna={aktywnaKategoria} onWybierz={setAktywnaKategoria} />
     </>
   )
 }
