@@ -47,6 +47,7 @@ function App()
             Nie znaleziono zdjęć w tej kategorii.
           </div>
         )}
+        
 
         <Gallery zdjecia={widoczne} onUsun={usunZdjecie}/>
       </main>
