@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 const kursy = [
   'Programowanie w C#',
@@ -10,6 +10,7 @@ const kursy = [
 function App() {
   const imieNazwiskoRef = useRef(null)
   const numerKursuRef = useRef(null)
+  const [szukaj, setSzukaj] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -33,9 +34,15 @@ function App() {
 
       <h2 className="h5">Liczba kursów: {kursy.length}</h2>
 
+      <input type="text" 
+      className="form-control mb-2" 
+      placeholder="Szukaj kursu..." 
+      value={szukaj} onChange={e => setSzukaj(e.target.value)}
+      />
+
       <ol>
-        {kursy.map((kurs, index) => (
-          <li key={index}>{kurs}</li>
+        {widoczne.map(({kurs, numer}) => (
+          <li key={numer} value={numer}>{kurs}</li>
         ))}
       </ol>
 
