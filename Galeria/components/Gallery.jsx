@@ -9,7 +9,9 @@ function Gallery({ zdjecia, onUsun}) {
         <Fragment key={zdjecie.id}>
           <div className="col-12 col-md-6 col-lg-4">
             <PhotoCard
-              {...zdjecie} onUsun={() => onUsun(zdjecie.id)}/>
+              {...zdjecie}
+              onUsun={() => onUsun(zdjecie.id)}
+              onPrzelacz={() => onPrzelacz(zdjecie.id)}/>
           </div>
           <PhotoModal {...zdjecie} />
         </Fragment>

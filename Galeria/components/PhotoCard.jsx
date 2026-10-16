@@ -10,6 +10,7 @@ function PhotoCard({
   alt,
   favorite,
   onUsun,
+  onPrzelacz,
 }) {
   return (
     <div className="card h-100 shadow-sm">
@@ -20,6 +21,7 @@ function PhotoCard({
           <button
             type="button"
             className="btn btn-link p-0 fs-4 lh-1"
+            onClick={onPrzelacz}
             aria-label={favorite ? 'Usuń z ulubionych' : 'Dodaj do ulubionych'}
             aria-pressed={favorite}
           >
