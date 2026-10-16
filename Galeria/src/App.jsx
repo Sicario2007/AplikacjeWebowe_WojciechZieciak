@@ -23,8 +23,13 @@ function App()
     : zdjecia.filter(z => z.category === aktywnaKategoria)
 
     function usunZdjecie(id) {
-    setZdjecia(zdjecia.filter(z => z.id !== id))
-  }
+      setZdjecia(zdjecia.filter(z => z.id !== id))
+    }
+
+    function dodajZdjecie(nowe) {
+      const noweId = Math.max(...zdjecia.map(z => z.id)) + 1
+      setZdjecia([...zdjecia, { ...nowe, id: noweId, favorite: false }])
+    }
   return(
     <>
     <Navbar />
