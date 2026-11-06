@@ -9,9 +9,11 @@ import './App.css'
 
 function App()
 {
-  const [zdjecia, setZdjecia] = useState([]);
-  const [aktywnaKategoria, setAktywnaKategoria] = useState('wszystkie')
-
+  const [zdjecia, setZdjecia] = useState([]) 
+  const [isLoading, setIsLoading] = useState(true) 
+  const [error, setError] = useState(null) 
+  const [aktywnaKategoria, setAktywnaKategoria] = useState('wszystkie') 
+ 
   useEffect(() => { 
     async function pobierzZdjecia() { 
       try { 
@@ -19,13 +21,15 @@ function App()
         if (!odpowiedz.ok) throw new Error('Błąd serwera: ' + odpowiedz.status) 
         const dane = await odpowiedz.json() 
         setZdjecia(dane) 
-      } 
-      catch (err) { 
-        console.log(err.message) 
+      } catch (err) { 
+        setError(err.message) 
+      } finally { 
+        setIsLoading(false) 
       } 
     } 
-      pobierzZdjecia() 
-    }, [])
+ 
+    pobierzZdjecia() 
+  }, []) 
   
   const widoczne =
     aktywnaKategoria === 'wszystkie'
@@ -46,6 +50,27 @@ function App()
         zdjecia.map(z => (z.id === id ? { ...z, favorite: !z.favorite } : z))
       )
     }
+
+     if (isLoading) { 
+    return ( 
+      <div className="text-center mt-5"> 
+        <div className="spinner-border text-primary" role="status" /> 
+        <p className="mt-2 text-muted">Ładowanie galerii...</p> 
+      </div> 
+    ) 
+  } 
+ 
+  if (error) { 
+    return ( 
+      <div className="alert alert-danger m-4"> 
+        Nie udało się pobrać danych: {error} 
+      </div> 
+    ) 
+  } 
+ 
+  if (zdjecia.length === 0) { 
+    return <div className="alert alert-secondary m-4">Katalog jest na razie pusty.</div> 
+  }
 
   return(
     <>
